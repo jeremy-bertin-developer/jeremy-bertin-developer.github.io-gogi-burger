@@ -27,17 +27,19 @@ h1 {
 
 .card-body hr {
     width: 400px;
-    border: 1px solid #292b2c;
+    border-bottom: 3px solid #292b2c;
 }
 
 .form-control {
     margin: 0 auto;
 }
 
-.card-text {
-    margin-top: 40px;
+#cheese,
+#validate-bun {
+    display: none;
 }
 
-#cheese {
-    display: none;
+#new-bun-validation {
+    text-transform: uppercase;
+    color: red;
 }

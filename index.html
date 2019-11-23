@@ -16,71 +16,76 @@
     <div class="container-fluid bg-image-header">
         <div class="row">
             <div class="col-12 text-center">
-                <h1>Hamburger Gogi</h1>
+                <h1>GogiBurger</h1>
             </div>
             <div id="main-card" class="col-8">
                 <div id="sub-card" class="card text-center border-0 rounded-0">
                     <div class="card-body text-center">
-                        <h3 class="card-title">The burger that you will never forget</h3>
+                        <h3 class="card-title my-4">The burger that you will never forget</h3>
                         <hr>
-                        <h4 class="card-text">Choose your Bun</h4>
-                        <select id="bun" class="form-control col-4">
-                            <option value="classic-bun" id="classic-bun">Classic</option>
-                            <option value="full-corn" id="full-corn">Full Corn</option>
-                            <option value="brioche" id="brioche">Brioche</option>
+                        <h4 class="card-text my-4">Choose your Bun</h4>
+                        <select id="bun" class="form-control col-4 mb-4" onchange="chooseBun()">
+                            <option selected disabled>-</option>
+                            <option value="Classic" id="classic-bun">Classic</option>
+                            <option value="Full Corn" id="full-corn">Full Corn</option>
+                            <option value="Brioche" id="brioche">Brioche</option>
                         </select>
-                        <button onclick="selectBun()" type="button" class="btn btn-primary">Primary</button>
+                        <button id="validate-bun" onclick="confirmBun()" type="button" class="btn btn-primary mb-4">Validate Bun ?</button>
+                        <h4 id="new-bun-validation" class="card-text my-4"></h4>
 
-                        <h4 class="card-text">Wanna some cheese ?</h4>
+
+                        <h4 class="card-text mb-4">Wanna some cheese ?</h4>
 
                         <div>
-                            <div class="form-check form-check-inline">
+                            <div class="form-check form-check-inline mb-4">
                                 <input class="form-check-input" type="checkbox" id="cheese-yes" value="option1">
                                 <label class="form-check-label" for="cheese-yes">Yes</label>
                             </div>
-                            <div class="form-check form-check-inline mb-2">
+                            <div class="form-check form-check-inline mb-4">
                                 <input class="form-check-input" type="checkbox" id="cheese-no" value="option2">
                                 <label class="form-check-label" for="cheese-no">No</label>
                             </div>
                         </div>
 
-                        <select id="cheese" class="form-control col-4">
+                        <button id="validate-cheese" onclick="selectCheese()" type="button" class="btn btn-primary mb-4">Validate Cheese</button>
+
+                        <select id="cheese" class="form-control col-4 mb-4">
                             <option id="gouda">Gouda</option>
                             <option id="emmental">Emmental</option>
                         </select>
 
-                        <h4 class="card-text mb-3">How cooked you want your meat ?</h4>
+                        <h4 class="card-text mb-4">How cooked you want your meat ?</h4>
 
-                        <div class="slidecontainer">
+                        <div class="slidecontainer mb-4">
                             <label id="raw" class="mr-3" for="how-cooked">Raw</label>
                             <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
                             <label id="well-done" class="ml-3" for="how-cooked">Well done</label>
                         </div>
 
-                        <h4 class="card-text mb-3">Garnish</h4>
+                        <h4 class="card-text mb-4">Garnish</h4>
 
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline mb-4">
                             <input class="form-check-input" type="checkbox" id="tomatoes" value="option1">
                             <label class="form-check-label" for="tomatoes">Tomatoes</label>
                         </div>
 
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline mb-4">
                             <input class="form-check-input" type="checkbox" id="pickles" value="option2">
                             <label class="form-check-label" for="pickles">Pickles</label>
                         </div>
 
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline mb-4">
                             <input class="form-check-input" type="checkbox" id="salad" value="option3">
                             <label class="form-check-label" for="salad">Salad</label>
                         </div>
 
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline mb-4">
                             <input class="form-check-input" type="checkbox" id="onions" value="option4">
                             <label class="form-check-label" for="onions">Onions</label>
                         </div>
 
-                        <h4 class="card-text">Choose your Sauce</h4>
-                        <select class="form-control col-4">
+                        <h4 class="card-text mb-4">Choose your Sauce</h4>
+                        <select class="form-control col-4 mb-4">
                             <option id="ketchup">Ketchup</option>
                             <option id=mayo>Mayonnaise</option>
                             <option id="samourai">Samourai</option>

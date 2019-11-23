@@ -1,7 +1,8 @@
 let classicBun = document.getElementById("classic-bun");
 let fullCorn = document.getElementById("full-corn");
 let brioche = document.getElementById("brioche");
-// let allBuns = ["classicBun", "fullCorn", "brioche"];
+let validateBun = document.getElementById("validate-bun");
+let newBunValidation = document.getElementById("new-bun-validation");
 
 
 let cheeseYes = document.getElementById("cheese-yes");
@@ -22,17 +23,50 @@ let ketchup = document.getElementById("ketchup");
 let mayo = document.getElementById("mayo");
 let samourai = document.getElementById("mayo");
 
+let newBun;
+let newBurger = [];
 
-function selectBun(){
-    let newBurger = [];
-    if (classicBun.value.selected == "classic-bun") {
-        newBurger.push(classicBun.value);
-    } else if (fullCorn.value.slected == "full-corn") {
-        newBurger.push(fullCorn.value);
-    } else if (brioche.value.selected == "brioche") {
-        newBurger.push(brioche.value);
+function emptyTheBun() {
+    newBun = [];
+}
+
+function emptytheBurger() {
+    newBurger = [];
+}
+
+function disableOption(arg){
+    arg.disabled = true;
+}
+
+function chooseBun() {
+    if (classicBun.selected) {
+        emptyTheBun();
+        emptytheBurger();
+        newBun = classicBun.value;
+        newBurger.push("Your bun is : " + newBun + ",");
+    } else if (fullCorn.selected) {
+        emptyTheBun();
+        emptytheBurger();
+        newBun = fullCorn.value;
+        newBurger.push("Your bun is : " + newBun + ",");
+    } else if (brioche.selected) {
+        emptyTheBun();
+        emptytheBurger();
+        newBun = brioche.value;
+        newBurger.push("Your bun is : " + newBun + ",");
     }
+    validateBun.style.display = "inline-block";
+    console.log(newBun);
     console.log(newBurger);
+}
+
+function confirmBun(){
+    disableOption(classicBun);
+    disableOption(fullCorn);
+    disableOption(brioche);
+    newBunValidation.innerHTML = "Your bun is : " + newBun;
+    validateBun.style.display = "none";
+    
 }
 
 
