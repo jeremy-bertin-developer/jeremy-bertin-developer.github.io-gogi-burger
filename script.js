@@ -4,12 +4,14 @@ let brioche = document.getElementById("brioche");
 let validateBun = document.getElementById("validate-bun");
 let newBunValidation = document.getElementById("new-bun-validation");
 
-
+let cheese = document.getElementById("cheese");
 let cheeseYes = document.getElementById("cheese-yes");
 let cheeseNo = document.getElementById("cheese-no");
 
 let gouda = document.getElementById("gouda");
 let emmental = document.getElementById("emmental");
+let validateCheese = document.getElementById("validate-cheese");
+let newCheeseValidation = document.getElementById("new-cheese-validation");
 
 let raw = document.getElementById("raw");
 let wellDone = document.getElementById("well-done");
@@ -24,10 +26,15 @@ let mayo = document.getElementById("mayo");
 let samourai = document.getElementById("mayo");
 
 let newBun;
+let newCheese;
 let newBurger = [];
 
 function emptyTheBun() {
     newBun = [];
+}
+
+function emptyCheese() {
+    newCheese = [];
 }
 
 function emptytheBurger() {
@@ -41,34 +48,70 @@ function disableOption(arg){
 function chooseBun() {
     if (classicBun.selected) {
         emptyTheBun();
-        emptytheBurger();
         newBun = classicBun.value;
-        newBurger.push("Your bun is : " + newBun + ",");
     } else if (fullCorn.selected) {
         emptyTheBun();
-        emptytheBurger();
         newBun = fullCorn.value;
-        newBurger.push("Your bun is : " + newBun + ",");
     } else if (brioche.selected) {
         emptyTheBun();
-        emptytheBurger();
         newBun = brioche.value;
-        newBurger.push("Your bun is : " + newBun + ",");
-    }
+    };
     validateBun.style.display = "inline-block";
-    console.log(newBun);
-    console.log(newBurger);
 }
 
 function confirmBun(){
+    newBurger.push("Your bun is : " + newBun + ",");
     disableOption(classicBun);
     disableOption(fullCorn);
     disableOption(brioche);
+    newBunValidation.style.display = "block";
     newBunValidation.innerHTML = "Your bun is : " + newBun;
     validateBun.style.display = "none";
     
 }
 
+function cheeseYesSelection(){
+    if(cheeseYes.checked == true){
+        cheese.style.display = "inline-block";
+        cheeseNo.disabled = true;
+    } else if (cheeseYes.checked == false) {
+        cheese.style.display = "none";
+        cheeseNo.disabled = false;
+    } 
+}
+
+function cheeseNoSelection(){
+    if (cheeseNo.checked == true) {
+        cheeseYes.disabled = true;
+    } 
+
+    else if (cheeseNo.checked == false) {
+        cheeseYes.disabled = false;
+    }
+}
+
+function chooseCheese() {
+    if (gouda.selected) {
+        emptyCheese();
+        newCheese = gouda.value;
+    } else if (emmental.selected) {
+        emptyCheese();
+        newCheese = emmental.value;
+    }
+    validateCheese.style.display = "block";
+}
+
+function confirmCheese(){
+    newBurger.push("Your cheese is : " + newCheese + ",");
+    disableOption(gouda);
+    disableOption(emmental);
+    newCheeseValidation.style.display = "block";
+    newCheeseValidation.innerHTML = "Your cheese is : " + newCheese;
+    validateCheese.style.display = "none";
+    cheeseYes.disabled = true;
+    cheeseNo.disabled = true;
+    console.log(newBurger);
+}
 
 
 // function burger(bun, cheese, meat, garnish, sauce) {

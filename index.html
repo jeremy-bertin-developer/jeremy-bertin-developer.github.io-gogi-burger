@@ -30,29 +30,30 @@
                             <option value="Full Corn" id="full-corn">Full Corn</option>
                             <option value="Brioche" id="brioche">Brioche</option>
                         </select>
-                        <button id="validate-bun" onclick="confirmBun()" type="button" class="btn btn-primary mb-4">Validate Bun ?</button>
-                        <h4 id="new-bun-validation" class="card-text my-4"></h4>
+                        <button id="validate-bun" onclick="confirmBun()" type="button" class="btn btn-primary mb-4">Confirm Bun ?</button>
+                        <h4 id="new-bun-validation" class="card-text my-4 px-3 py-3"></h4>
 
 
                         <h4 class="card-text mb-4">Wanna some cheese ?</h4>
 
                         <div>
-                            <div class="form-check form-check-inline mb-4">
+                            <div class="form-check form-check-inline mb-4" onchange="cheeseYesSelection()">
                                 <input class="form-check-input" type="checkbox" id="cheese-yes" value="option1">
                                 <label class="form-check-label" for="cheese-yes">Yes</label>
                             </div>
-                            <div class="form-check form-check-inline mb-4">
+                            <div class="form-check form-check-inline mb-4" onchange="cheeseNoSelection()">
                                 <input class="form-check-input" type="checkbox" id="cheese-no" value="option2">
                                 <label class="form-check-label" for="cheese-no">No</label>
                             </div>
                         </div>
 
-                        <button id="validate-cheese" onclick="selectCheese()" type="button" class="btn btn-primary mb-4">Validate Cheese</button>
-
-                        <select id="cheese" class="form-control col-4 mb-4">
+                        <select id="cheese" class="form-control col-4 mb-4" onchange="chooseCheese()">
+                            <option selected disabled>-</option>
                             <option id="gouda">Gouda</option>
                             <option id="emmental">Emmental</option>
                         </select>
+                        <button id="validate-cheese" onclick="confirmCheese()" type="button" class="btn btn-primary mb-4">Confirm Cheese</button>
+                        <h4 id="new-cheese-validation" class="card-text my-4 px-3 py-3"></h4>
 
                         <h4 class="card-text mb-4">How cooked you want your meat ?</h4>
 

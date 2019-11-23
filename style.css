@@ -35,11 +35,18 @@ h1 {
 }
 
 #cheese,
-#validate-bun {
+#validate-bun,
+#validate-cheese {
     display: none;
+    margin: 0 auto;
 }
 
-#new-bun-validation {
+#new-bun-validation,
+#new-cheese-validation {
+    margin: 0 auto;
+    border-radius: 30px;
+    display: none;
     text-transform: uppercase;
-    color: red;
+    color: #d9534f;
+    background-color: rgba(240, 173, 78, 0.60);
 }
