@@ -1,0 +1,43 @@
+body {
+    width: 100%;
+}
+
+.bg-image-header {
+    background-image: url("images/homepage.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: 'PT Serif', serif;
+    color: #F9F9F9;
+    padding: 20px;
+}
+
+#main-card {
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+#sub-card {
+    background-color: rgba(249, 249, 249, 0.60);
+}
+
+.card-body hr {
+    width: 400px;
+    border: 1px solid #292b2c;
+}
+
+.form-control {
+    margin: 0 auto;
+}
+
+.card-text {
+    margin-top: 40px;
+}
+
+#cheese {
+    display: none;
+}

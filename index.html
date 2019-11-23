@@ -1,0 +1,115 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet" />
+    <title>Hamburger Gogi</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="container-fluid bg-image-header">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1>Hamburger Gogi</h1>
+            </div>
+            <div id="main-card" class="col-8">
+                <div id="sub-card" class="card text-center border-0 rounded-0">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">The burger that you will never forget</h3>
+                        <hr>
+                        <h4 class="card-text">Choose your Bun</h4>
+                        <select id="bun" class="form-control col-4">
+                            <option value="classic-bun" id="classic-bun">Classic</option>
+                            <option value="full-corn" id="full-corn">Full Corn</option>
+                            <option value="brioche" id="brioche">Brioche</option>
+                        </select>
+                        <button onclick="selectBun()" type="button" class="btn btn-primary">Primary</button>
+
+                        <h4 class="card-text">Wanna some cheese ?</h4>
+
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="cheese-yes" value="option1">
+                                <label class="form-check-label" for="cheese-yes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline mb-2">
+                                <input class="form-check-input" type="checkbox" id="cheese-no" value="option2">
+                                <label class="form-check-label" for="cheese-no">No</label>
+                            </div>
+                        </div>
+
+                        <select id="cheese" class="form-control col-4">
+                            <option id="gouda">Gouda</option>
+                            <option id="emmental">Emmental</option>
+                        </select>
+
+                        <h4 class="card-text mb-3">How cooked you want your meat ?</h4>
+
+                        <div class="slidecontainer">
+                            <label id="raw" class="mr-3" for="how-cooked">Raw</label>
+                            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                            <label id="well-done" class="ml-3" for="how-cooked">Well done</label>
+                        </div>
+
+                        <h4 class="card-text mb-3">Garnish</h4>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="tomatoes" value="option1">
+                            <label class="form-check-label" for="tomatoes">Tomatoes</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="pickles" value="option2">
+                            <label class="form-check-label" for="pickles">Pickles</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="salad" value="option3">
+                            <label class="form-check-label" for="salad">Salad</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="onions" value="option4">
+                            <label class="form-check-label" for="onions">Onions</label>
+                        </div>
+
+                        <h4 class="card-text">Choose your Sauce</h4>
+                        <select class="form-control col-4">
+                            <option id="ketchup">Ketchup</option>
+                            <option id=mayo>Mayonnaise</option>
+                            <option id="samourai">Samourai</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
