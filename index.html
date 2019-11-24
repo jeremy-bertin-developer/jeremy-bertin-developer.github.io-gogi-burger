@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet" />
-    <title>Hamburger Gogi</title>
+    <title>GogiBurger</title>
     <link rel="stylesheet" href="style.css" />
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -30,8 +30,8 @@
                             <option value="Full Corn" id="full-corn">Full Corn</option>
                             <option value="Brioche" id="brioche">Brioche</option>
                         </select>
-                        <button id="validate-bun" onclick="confirmBun()" type="button" class="btn btn-primary mb-4">Confirm Bun ?</button>
-                        <h4 id="new-bun-validation" class="card-text my-4 px-3 py-3"></h4>
+                        <button id="validate-bun" onclick="confirmBun()" type="button"
+                            class="btn btn-primary mb-4">Confirm Bun ?</button>
 
 
                         <h4 class="card-text mb-4">Wanna some cheese ?</h4>
@@ -52,47 +52,96 @@
                             <option id="gouda">Gouda</option>
                             <option id="emmental">Emmental</option>
                         </select>
-                        <button id="validate-cheese" onclick="confirmCheese()" type="button" class="btn btn-primary mb-4">Confirm Cheese</button>
-                        <h4 id="new-cheese-validation" class="card-text my-4 px-3 py-3"></h4>
+                        <button id="validate-cheese" onclick="confirmCheese()" type="button"
+                            class="btn btn-primary mb-4">Confirm Cheese</button>
 
                         <h4 class="card-text mb-4">How cooked you want your meat ?</h4>
 
-                        <div class="slidecontainer mb-4">
-                            <label id="raw" class="mr-3" for="how-cooked">Raw</label>
-                            <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                        <div class="slidecontainer mb-4" onchange="chooseMeat()">
+                            <label id="blue-rare" class="mr-3" for="how-cooked">Blue Rare</label>
+                            <input type="range" min="1" max="100" class="slider" id="slider">
                             <label id="well-done" class="ml-3" for="how-cooked">Well done</label>
                         </div>
 
+                        <h4 id="show-cooked-meat" class="card-text my-4 px-3 py-3 text-center"></h4>
+                        <button id="validate-cooked-meat" onclick="confirmCookedMeat()" type="button"
+                            class="btn btn-primary mb-4">Confirm Cooked Meat</button>
+
                         <h4 class="card-text mb-4">Garnish</h4>
 
-                        <div class="form-check form-check-inline mb-4">
-                            <input class="form-check-input" type="checkbox" id="tomatoes" value="option1">
-                            <label class="form-check-label" for="tomatoes">Tomatoes</label>
+                        <div class="form-check form-check-inline mb-4" onchange="tomatoesSelection()">
+                            <input class="form-check-input" type="checkbox" id="tomatoes" value="Tomatoes">
+                            <label class="form-check-label mr-4" for="tomatoes">Tomatoes</label>
+                        </div>
+                        <div class="form-check form-check-inline mb-4" onchange="picklesSelection()">
+                            <input class="form-check-input" type="checkbox" id="pickles" value="Pickles">
+                            <label class="form-check-label mr-4" for="pickles">Pickles</label>
+                        </div>
+                        <div class="form-check form-check-inline mb-4" onchange="saladSelection()">
+                            <input class="form-check-input" type="checkbox" id="salad" value="Salad">
+                            <label class="form-check-label mr-4" for="salad">Salad</label>
+                        </div>
+                        <div class="form-check form-check-inline mb-4" onchange="onionsSelection()">
+                            <input class="form-check-input" type="checkbox" id="onions" value="Onions">
+                            <label class="form-check-label mr-4" for="onions">Onions</label>
                         </div>
 
-                        <div class="form-check form-check-inline mb-4">
-                            <input class="form-check-input" type="checkbox" id="pickles" value="option2">
-                            <label class="form-check-label" for="pickles">Pickles</label>
-                        </div>
-
-                        <div class="form-check form-check-inline mb-4">
-                            <input class="form-check-input" type="checkbox" id="salad" value="option3">
-                            <label class="form-check-label" for="salad">Salad</label>
-                        </div>
-
-                        <div class="form-check form-check-inline mb-4">
-                            <input class="form-check-input" type="checkbox" id="onions" value="option4">
-                            <label class="form-check-label" for="onions">Onions</label>
-                        </div>
+                        <button id="validate-garnish" onclick="confirmGarnish()" type="button"
+                            class="btn btn-primary mb-4">Confirm Your Garnish</button>
 
                         <h4 class="card-text mb-4">Choose your Sauce</h4>
-                        <select class="form-control col-4 mb-4">
-                            <option id="ketchup">Ketchup</option>
-                            <option id=mayo>Mayonnaise</option>
-                            <option id="samourai">Samourai</option>
+                        <select id="sauces" class="form-control col-4 mb-4" onchange="chooseSauce()">
+                            <option selected>-</option>
+                            <option id="ketchup" value="Ketchup">Ketchup</option>
+                            <option id="mayo" value="Mayo">Mayonnaise</option>
+                            <option id="samourai" value="Samourai">Samourai</option>
+                            <option id="all-sauces" value="All Sauces">All Sauces</option>
                         </select>
+
+                        <button id="validate-sauce" onclick="confirmSauce()" type="button"
+                            class="btn btn-primary mb-4">Confirm Your Garnish</button>
                     </div>
                 </div>
+            </div>
+            <div id="burger" class="col-4">
+                <h3 class="card-text my-4 text-center">How your GogiBurger is looking like</h3>
+                <hr>
+                <h4 id="new-bun-validation" class="card-text my-1 px-4 py-4 text-center"></h4>
+
+                <h4 id="new-cheese-validation" class="card-text my-1 px-2 py-2 text-center"></h4>
+                <h4 id="new-meat-validation" class="card-text my-1 px-3 py-3 text-center"></h4>
+
+                <div class="row">
+                    <div class="col-6">
+                        <h4 id="new-pickles-validation1"
+                            class="card-text my-1 px-1 py-1 text-center float-right new-pickle-validation">Pickles</h4>
+                    </div>
+                    <div class="col-6">
+                        <h4 id="new-pickles-validation2"
+                            class="card-text my-1 px-1 py-1 text-center float-left new-pickle-validation">Pickles</h4>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-5">
+                        <h4 id="new-onions-validation1"
+                            class="card-text my-1 px-1 py-1 text-center float-right new-onions-validation">Onions</h4>
+                    </div>
+                    <div class="col-7">
+                        <h4 id="new-onions-validation2"
+                            class="card-text my-1 px-1 py-1 text-center float-left new-onions-validation">Onions</h4>
+                    </div>
+                </div>
+
+                <h4 id="new-tomatoes-validation" class="card-text my-1 px-1 py-1 text-center">Tomatoes</h4>
+
+                <h4 id="new-salad-validation" class="card-text my-1 px-1 py-1 text-center">Salad</h4>
+
+                <h4 id="new-ketchup-validation" class="card-text my-1 px-1 py-1 text-center">Ketchup</h4>
+                <h4 id="new-mayo-validation" class="card-text my-1 px-1 py-1 text-center">Mayo</h4>
+                <h4 id="new-samourai-validation" class="card-text my-1 px-1 py-1 text-center">Samourai</h4>
+
+                <h4 id="new-bun-validation-bottom" class="card-text my-1 px-3 py-3 text-center"></h4>
             </div>
         </div>
     </div>
